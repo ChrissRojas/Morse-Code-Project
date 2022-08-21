@@ -41,6 +41,7 @@ class Morse_Code:
 
     def convert(self, word):
         morse_code = ""
+        word = word.lower()
         for i in word:
             morse_code += self.morse[i]
         return morse_code
@@ -48,3 +49,11 @@ class Morse_Code:
     def print_morse(self,word):
         print(self.convert(word))
 
+parse = Morse_Code()
+
+def main():
+    user_input = input("Enter a word or sentence: ")
+    parse.print_morse(user_input)
+
+if __name__ == "__main__":
+    main()
