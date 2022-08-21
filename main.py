@@ -63,9 +63,6 @@ def main():
     print(menu())
     option = int(input("Enter Choice"))
     while option != 0:
-        print(menu())
-        option = int(input("Enter Choice"))
-
         if option == 1:
             user_input = input("Enter a word or sentence: ")
             while user_input is None or len(user_input) == 0:
@@ -74,6 +71,8 @@ def main():
         else:
             option = 0
             print("Goodbye")
+        print(menu())
+        option = int(input("Enter Choice"))
 
 if __name__ == "__main__":
     main()
