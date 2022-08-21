@@ -39,7 +39,12 @@ class Morse_Code:
         "0":"----- "
     }
 
-    def convert(self, word):
+    def convert(self, word:str) -> str:
+        """
+
+        :param word:
+        :return: Returns Morse Code
+        """
         morse_code = ""
         word = word.lower()
         for i in word:
@@ -51,9 +56,21 @@ class Morse_Code:
 
 parse = Morse_Code()
 
+def menu():
+    return  "1 - Convert to Morse\n" \
+            "0 - Exit"
 def main():
-    user_input = input("Enter a word or sentence: ")
-    parse.print_morse(user_input)
+    option = int(input("Enter Choice"))
+    print(menu())
+    while option != 0:
+        if option == 1:
+            user_input = input("Enter a word or sentence: ")
+            while user_input is None or len(user_input) == 0:
+                user_input = input("Please enter something")
+            parse.print_morse(user_input)
+        else:
+            option = 0
+            print("Goodbye")
 
 if __name__ == "__main__":
     main()
