@@ -57,6 +57,10 @@ class Morse_Code:
 parse = Morse_Code()
 
 def menu():
+    """
+
+    :return:
+    """
     return  "1 - Convert to Morse\n" \
             "0 - Exit"
 def main():
