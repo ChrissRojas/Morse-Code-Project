@@ -60,9 +60,12 @@ def menu():
     return  "1 - Convert to Morse\n" \
             "0 - Exit"
 def main():
-    option = int(input("Enter Choice"))
     print(menu())
+    option = int(input("Enter Choice"))
     while option != 0:
+        print(menu())
+        option = int(input("Enter Choice"))
+
         if option == 1:
             user_input = input("Enter a word or sentence: ")
             while user_input is None or len(user_input) == 0:
